@@ -23,6 +23,16 @@ public class Variable extends Node {
     void setName(String name){
         this.name = name;
     }
+
+    Node diff(Variable var) {
+        if(var.name.equals(name))return new Constant(sign ? -1 : 1);
+        else return new Constant(0);
+    }
+    @Override
+    boolean isZero() {
+        return false;
+    }
+
     @Override
     double evaluate(){
         return sign ? -value : value;

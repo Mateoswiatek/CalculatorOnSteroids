@@ -18,4 +18,7 @@ abstract public class Node {
     }
 
     int getArgumentCount(){return 0;}
+
+    abstract Node diff(Variable var);
+    abstract boolean isZero();
 }

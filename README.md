@@ -1,3 +1,4 @@
+https://github.com/Mateoswiatek/CalculatorOnSteroids
 # CalculatorOnSteroids - Simple Mathematical Expressions Generator
 This project aims to implement data structures for representing and manipulating simple mathematical expressions as graphs.
 The project is not based on parsing text expressions, but creates a graph representation using appropriately constructed code.

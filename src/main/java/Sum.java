@@ -36,6 +36,16 @@ public class Sum extends Node{
 
     int getArgumentsCount(){ return args.size();}
 
+    Node diffVanilla(Variable var) {
+        Sum r = new Sum();
+        for(Node n:args){
+            if(!n.isZero()){
+                r.add(n.diff(var));
+            }
+        }
+        return r;
+    }
+
     public String toString(){
         if(args.isEmpty()) return "";
 
@@ -51,5 +61,15 @@ public class Sum extends Node{
 
         if(sign) stringBuilder.append(")");
         return stringBuilder.toString();
+    }
+
+    @Override
+    Node diff(Variable var) {
+        return diffVanilla(var);
+    }
+
+    @Override
+    boolean isZero() {
+        return this.evaluate() == 0;
     }
 }

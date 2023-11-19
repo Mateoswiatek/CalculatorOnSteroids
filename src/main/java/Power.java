@@ -11,6 +11,17 @@ public class Power extends Node {
     }
     int getArgumentsCount(){return 1;}
 
+    Node diff(Variable var) {
+        Prod r =  new Prod(sign ? -p : p ,new Power(arg,p-1));
+        r.mul(arg.diff(var));
+        return r;
+    }
+
+    @Override
+    boolean isZero() {
+        return p == 0;
+    }
+
     @Override
     public String toString(){
         StringBuilder stringBuilder = new StringBuilder();

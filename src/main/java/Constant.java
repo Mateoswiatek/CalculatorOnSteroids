@@ -20,5 +20,14 @@ public class Constant extends Node{
         DecimalFormat format = new DecimalFormat("0.#####",new DecimalFormatSymbols(Locale.US));
         return (sign ? "(-" : "") + format.format(value) + (sign ? ")" : "") ;
     }
+    @Override
+    Node diff(Variable var) {
+        return new Constant(0);
+    }
+
+    @Override
+    boolean isZero() {
+        return value == 0;
+    }
 
 }
